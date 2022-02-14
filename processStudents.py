@@ -19,7 +19,6 @@ through the logic of the problem.
 
 '''
 
-
 import csv
 from xml.etree.ElementPath import get_parent_map
 
@@ -46,34 +45,39 @@ student_dict = {}
     #check if the GPA is below 3.0. If so, write the record to the outfile
 for record in student_file:
     if float(record[8]) < 3.0:
-        outfile.write(record[1] + ',' +)
-        
-        
+        print(record)
+        outfile.write(str(record))
 
         
-
 
 
     # append the record to the dictionary with the student id as the Key
     # and the value as the GPA
-    
-
-
-
-
+for record in student_file:
+     student_dict["student_id"] = record[0]
+     student_dict["pin"] = record[1]
+     student_dict["firstname"] = record[2]
+     student_dict["lastname"] = record[3]
+     student_dict["city"] = record[4]
+     student_dict["state"] = record[5]
+     student_dict["major"] = record[6]
+     student_dict["classification"] = record[7]
+     student_dict["gpa"] = record[8]
+     print(student_dict)
+          
 
 #print the entire dictionary
 
 
-#Print the student id 
-
+#Print the student id  
+     print(student_dict['student_id'])
 
 #print out the corresponding GPA from the dictionary
-
+     print(student_dict['gpa'])
 
 
 #close the outfile
-
+outfile.close()
 
 
 
